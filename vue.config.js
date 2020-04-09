@@ -1,7 +1,7 @@
 module.exports = {
   publicPath: './',
   outputDir: process.env.outputDir,
-  lintOnSave: true,
+  lintOnSave: false,
   devServer: {
     open: true,
     host: '0.0.0.0',
