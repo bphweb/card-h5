@@ -2,10 +2,10 @@
   <div id="app">
     <router-view/>
     <van-tabbar route>
-      <van-tabbar-item replace to="/" icon="home-o" dot>
+      <van-tabbar-item replace to="/storeIndex" icon="home-o" dot>
         首页
       </van-tabbar-item>
-      <van-tabbar-item replace to="/about" icon="friends-o">
+      <van-tabbar-item replace to="/storeMine" icon="friends-o">
         我的
       </van-tabbar-item>
     </van-tabbar>

@@ -10,14 +10,15 @@ module.exports = {
     overlay: {
       warnings: true,
       errors: true
-    } // 错误、警告在页面弹出
-    // proxy: {
-    // [process.env.VUE_APP_MODE]: {
-    //     target: `http://cs.ep.eichong.com:2482/api`,
-    //     changeOrigin: true,
-    //     pathRewrite: {//看后台是否有，决定是否重写
-    //         ["^" + process.env.VUE_APP_API_URL]: ""
-    //     }
-    // }
+    }, // 错误、警告在页面弹出
+    proxy: {
+      '/api': {
+          target: 'http://192.168.0.183:8904/api',
+          changeOrigin: true,
+          pathRewrite: {
+            "^/api":''
+          }
+      }
+    }
   }
 }
