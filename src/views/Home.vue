@@ -60,6 +60,7 @@ export default {
     getData(){
       let params ={}
       let userId= window.location.href.split('?')[1].split('=')[1]
+      sessionStorage.setItem('userId',userId)
       this.$axios({
         method:'get',
         url:'/api/product/getStoreProductList?userId='+userId,

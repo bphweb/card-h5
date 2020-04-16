@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <router-view/>
-    <van-tabbar route>
-      <van-tabbar-item replace to="/storeIndex" icon="home-o" dot>
+    <van-tabbar  v-model="active"  @change="onChange">
+      <van-tabbar-item icon="home-o" dot>
         首页
       </van-tabbar-item>
-      <van-tabbar-item replace to="/storeMine" icon="friends-o">
+      <van-tabbar-item icon="friends-o">
         我的
       </van-tabbar-item>
     </van-tabbar>
@@ -17,7 +17,19 @@ import { Tabbar, TabbarItem } from 'vant'
 Vue.use(Tabbar).use(TabbarItem)
 export default {
   data(){
-    return{}
+    return{
+      userId:sessionStorage.getItem('userId'),
+      active:0
+    }
+  },
+  methods:{
+    onChange(index){
+      if(index==0){
+        this.$router.push({path:`/storeIndex?userId=${this.userId}`})
+      }else{
+        this.$router.push({path:`/storeMine?userId=${this.userId}`})
+      }
+    }
   }
 }
 </script>
